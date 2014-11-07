@@ -1,20 +1,22 @@
 Design Feed System
+==================
 
---Major Functions on Feed System
+#Major Functions on Feed System
 1. get post list for userId
 2. get time-line for userId
 extra: support like, comment, repost, time rage search, pagination
 
---There x problems have to solve.
+#There 5 problems have to solve.
 1. Data model, how to store the data model, and how to query them.
 2. How design the algorithm to achieve the major function-- time line, and give quantitative analyse of different algorithms on your data model
 3. how scale up your systems? 
 4. the system architecture --- 4 tier system, everybody knows...
-5. some details for the storage --- Do not tell what DB you want to use, because your system can be done by using any storage technology!!!
-                                    if the interviewer want to know whether you are familiar with DB technology.
+5. some details for the storage 
+   Do not tell what DB you want to use, because your system can be done by using any storage technology!!!
+   if the interviewer want to know whether you are familiar with DB technology.
 
 
---Data models
+#Data models
 1. event stream
 I don't know how to do with this model. 
 
@@ -37,7 +39,7 @@ user->friends->friend's chat history
 .....
 
 
---Algorithms for query 2nd degree relations from graph
+#Algorithms for query 2nd degree relations from graph
 there 2 ways: pull and push.
 pull(out-box): all posts are stored in the graph, we can retrieve the relations by 2 steps:
              1. fetch friend list
@@ -84,14 +86,14 @@ both pull and push can be fast to send notification to users.
 it depends on the strategies that how often to make notification to let user know that you have new feeds.
 once user got the notification, he can refresh it's time-line by pull, or read from push, that's OK.
 
---How scale up your systems? 
+#How scale up your systems? 
 That's easy, you must divide your system to many components
 each components provide it's interface independently, 
 we can call it meta-data interfaces, and we can not divide it be smaller.
 so they do not have any relation to each others.(Orthogonal)
 that means your system become liner scalable.
 
-For our feed system read:
+##For our feed system read:
 meta-data interfaces: getFriendListByUserId, batchGetPostListByUserId(pull model), getTimeLineFromInBoxByUserId(push model)
 external interfaces: getTimeLineByUserId 
 1 getTimeLineByUserId call = 1 getFriendListByUserId call + 1 batchGetPostListByUserId call  (pull model)
@@ -102,8 +104,7 @@ getPostListByUserId is scalable, your post system will take the responsibility f
 getTimeLineFromInBox is scalable too...
 
 
-For our feed system write:
-
+##For our feed system write:
 meta-data interfaces: writePostByUserId(all model), batchAppendPostToInBoxByUserId(push model)
 external interfaces: createPostByUserId
 
