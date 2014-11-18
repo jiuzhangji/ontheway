@@ -4,5 +4,4 @@ first, we need to clarify and list the use cases.
 here we'll focus on:
 1. Shortening: take a url => return a much shorter url
 2. Redirection: take a short url => redirect to the original url
-3. API
-4. Scalable
+3. High availability of the system (Scalable)
