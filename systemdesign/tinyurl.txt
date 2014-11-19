@@ -30,3 +30,41 @@ Math:
 8. 3TB for all URL, 36GB for all hashes (over 5 years);
 9. New data written per second: 40 * (500 + 6) = 20k
 10. Data read per second: 360 * 506 = 180k
+
+the overall (abstract) design is like this:
+1. application layer
+* shortening/redirection
+2. data stroage layer
+* acting like a big hash table (hash => url mappings)
+
+there're two ways to do the hash, one is to use a hash function, like:
+hash_url = convert_to_hash62(md5(original_url + random_salt)[:6]
+this is easior to handle existency check, removal and so on, but has problems for collision
+
+another way is to keep a counter:
+hash_url = conver_to_hash62(counter++)
+this way is easior to implement in practical engineering
+
+bottle neck:
+with the data we caculated, trafic would not likely to be the bottle neck. storage is the bottle neck and is more interesting.
+So we can go with a simple front end server to handle the request, and we can add load balancer if more request are comming at that time.
+
+scalability:
+for the storage, we can partition the data by hash % k for k machines. Every machines handles its own counter.
+e.g. we have 4 machines (m0, m1, m2, m3). So machine m1 would keep track of counters who % 4 == 1, that would be 1, 5, 9, ...
+so the first new url request goes to m1 would get hash id 1, the second 5, the third 9, and so on.
+
+once a machine is full, we can do a deeper partition. e.g. when m1 is full, we can partition it to m1_0, m1_1,
+and m1_0 tracks 1, 9, 17, ... , and m1_1 tracks (5, 13, 21, ...)
+
+this is easior to scale and does not affect other machines.
+
+reliability: 
+replica(cross region, master/slave),
+recovery(master:check points, slave: recreate)
+consistency
+
+more:
+add cache for read performance (memcached);
+key/value DB is faster than SQL DB in this case, as there's not much relation between tables;
+rate limit for attack mitigation;
