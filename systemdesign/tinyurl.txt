@@ -5,3 +5,28 @@ here we'll focus on:
 1. Shortening: take a url => return a much shorter url
 2. Redirection: take a short url => redirect to the original url
 3. High availability of the system (Scalable)
+(other possibilities: custom url, analytics, automatic link expiration, manual removal, UI vs API)
+
+second, we can list some constraints:
+twitter has 500M tweets per day. So if 1/10 has shorten url, that would be 1.5 BN shorten URL.
+if our service are not the top 3 service provider but in the top 10 service provider.
+we think 80% would go to the top 3 service provider. so it could be reasonable that our service generate about 100MLN shorten URL per month.
+
+read/write request could be 20/80 or 10/90
+one day is about 80k seconds;
+
+if we consider the service lasts for 5+years, and 500 bytes per url
+if we use base 62 encoding (a-z, A-Z,0-9)
+
+with a little math, we can caculate the following number:
+Math:
+1. New url per month: 100M
+2. 1B request per month
+3. 10% from shortening and 90% from redirection
+4. request per seconds (400, 40 shortening, 360 redirection)
+5. 5 years, 6B URLs
+6. 500 bytes per url
+7. with 62-based encoding hash, 6 bytes per hash;
+8. 3TB for all URL, 36GB for all hashes (over 5 years);
+9. New data written per second: 40 * (500 + 6) = 20k
+10. Data read per second: 360 * 506 = 180k
