@@ -43,7 +43,7 @@ this is easior to handle existency check, removal and so on, but has problems fo
 
 another way is to keep a counter:
 hash_url = conver_to_hash62(counter++)
-this way is easior to implement in practical engineering
+this way is easior to implement in practical engineering. But we need to maintain a reverse map in storage, which doubles the size.
 
 bottle neck:
 with the data we caculated, trafic would not likely to be the bottle neck. storage is the bottle neck and is more interesting.
