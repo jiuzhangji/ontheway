@@ -1,0 +1,42 @@
+4. 
+You visited a list of places recently, but you do not remember the
+order in which you visited them. You have with you the airplane 
+tickets that you used for travelling. Each ticket contains just the 
+start location and the end location. Can you reconstruct your journey?
+
+5. 
+拦截导弹
+http://codevs.cn/problem/1044/
+
+6.
+棋盘染色 2
+http://codevs.cn/problem/1050/
+
+7.
+骑士游历
+http://codevs.cn/problem/1219/
+
+8. 
+方格游戏
+http://codevs.cn/problem/2853/
+
+
+9.
+方格取数
+http://codevs.cn/problem/1043/
+
+10.
+线段覆盖
+http://codevs.cn/problem/1214/
+
+11.
+乘积最大
+http://codevs.cn/problem/1017/
+
+12.
+乘法游戏
+http://codevs.cn/problem/1966/
+
+13.
+四个国王
+http://codevs.cn/problem/1698/
