@@ -3,6 +3,8 @@
 比他矮或者一样高的地势。矩阵上边和左边是太平洋，下边和右边是大西洋。求出所有
 的能同时流到两个大洋的点。
 
+解答：同leetcode，BFS/DFS扫描，到两类边界当前扫描过的集合全部标记可到达。
+
 2.
 You are given two array, first array contain integer which represent heights of persons 
 and second array contain how many persons in front of him are standing who are greater 
@@ -16,3 +18,34 @@ similar to person of height 1. Your task to arrange them
 Ouput should be. 
 3 1 2 
 Here - 3 is at front, 1 has 3 in front ,2 has 1 and 3 in front.
+
+解答1： N平方，
+解答2： 线段树，lazy更新，修改
+
+3. 
+Given two sorted array in ascending order with same length N, calculate the first K min a[i]+b[j]. time complexty O(N). 
+some misunderstood first K, to put it straight, to find the Kth min, not the first min
+
+解答1：堆
+解答2：杨氏矩阵+二分猜值。每次猜的值mid，每次验证O(m+n)，如果从矩阵左下开始走，比mid大往上走，比mid小往右走。界定比mid小的有多少，比mid大的有多少。
+
+
+4. 3N的饼子问题
+饼子按照圆心切分为3N个扇形，每一块权值为wi, 每次取一块，其左右的扇形算作失效并合并剩下的扇形（不相邻变为相邻）。
+总共可以取出N个扇形，求N个wi总和的最大值。
+解答：1. 3N个里面取出N个互不相邻的扇形有多少方案？ DP问题，dp(i,j,k)， i是当前的index，j是已经选了多少个，k是当前的idx选了还是没选  2.由1的方案枚举
+
+5. 
+google某次一面：设计一个触屏系统，给了几个接口，自己写代码；
+
+解答：？？？
+
+
+6. 
+给定二叉树，两个节点U，V，求U到V的path上的节点value总和。
+
+解答：离线求LCA的方法，递归搜索即可，同求LCA的方法。
+
+
+7.
+红黑台阶{孙冕来补充}
