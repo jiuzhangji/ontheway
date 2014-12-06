@@ -1,6 +1,6 @@
-5. 
-拦截导弹
-http://codevs.cn/problem/1044/
+在这个edit上作为buffer当面共享
+http://collabedit.com/tm7rk
+
 
 6.
 棋盘染色 2
@@ -26,3 +26,7 @@ http://www.350351.com/bianchengyuyan/Java/101027.html
 18.
 string painter
 http://www.cnblogs.com/hyxsolitude/p/3850819.html
+
+19.
+二维的most trap water？
+
