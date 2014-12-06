@@ -1,0 +1,266 @@
+﻿1.
+这个题目有点儿意思，说是google面试题：
+
+输入是一个 N*N的矩阵，代表地势高度（elevation）。然后如果下雨，水流只能流去
+比他矮或者一样高的地势。矩阵上边和左边是太平洋，下边和右边是大西洋。求出所有
+的能同时流到两个大洋的点。
+
+4. 
+You visited a list of places recently, but you do not remember the
+order in which you visited them. You have with you the airplane 
+tickets that you used for travelling. Each ticket contains just the 
+start location and the end location. Can you reconstruct your journey?
+
+拓扑排序？
+
+5. 
+拦截导弹
+http://codevs.cn/problem/1044/
+
+6.
+棋盘染色 2
+http://codevs.cn/problem/1050/
+暂时无解，先考虑纵向能通
+
+7.
+骑士游历
+http://codevs.cn/problem/1219/
+DP 四点可达当前点
+
+8. 
+方格游戏
+http://codevs.cn/problem/2853/
+三维DP，矩阵走两遍
+同类型：传纸条
+
+9.
+方格取数
+http://codevs.cn/problem/1043/
+同8
+
+10.
+线段覆盖
+http://codevs.cn/problem/1214/
+
+11.
+乘积最大
+http://codevs.cn/problem/1017/
+
+12.
+乘法游戏
+http://codevs.cn/problem/1966/
+dp[i][j] := i开始，j结尾不包含的最大和
+dp[i][len] := i开始，len长度的最大和
+dp[i][j] = dp[i][k] + dp[k][j] + A[i][k][j]
+ik 之间的数字，保证kj之间的数字都取完了，再来取k
+
+13.
+四个国王
+JN皇后的NB方法：http://www.matrix67.com/blog/archives/266
+
+  void proc4(int row, int ld, int rd, int &res, int ones)
+    {
+        if(row==ones){
+            res++;
+            return ;
+        }
+        int pos = ones & (~(row|ld|rd));
+
+        while(pos != 0){
+            int p = pos & (~pos + 1);
+            proc4(row|p, (ld|p)<<1, (rd|p)>>1, res, ones);
+            pos = pos - p;
+        }
+    }
+
+low bit：来源于树状数组
+
+ 
+
+#!/usr/bin/env python3
+# coding: utf-8
+
+"""
+Challenge 3: Hill
+
+Given an array of integer elements
+
+Your task is to
+
+   - write a function that finds the minimum value X that makes possible the
+     following: generate a new array that is sorted in strictly ascending order
+     by increasing or decreasing each of the elements of the initial array with
+     integer values in the [0, X] range.
+
+        - Example: Having the initial array [5, 4, 3, 2, 8] the minimum value
+          for X is 3. Decrease the first element (5) by 3, decrease the second
+          one (4) by 1, increase the third one (3) by 1, increase the forth one
+          (2) by 3 and do nothing to the last one (8). In the end we obtain the
+          array [2, 3, 4, 5, 8] which is sorted in strictly ascending order.
+
+   - print the result X to the standard output (stdout)
+
+Note that your function will receive the following arguments:
+
+   - v, which is the array of integers
+
+Data constraints
+
+   - numbers are in ascending order when arranged from the smallest to the
+     largest number
+   - strictly ascending order means that each element is greater than the
+     preceding one (e.g., [1, 2, 2, 3] is NOT strictly ascending order)
+   - the length of the array will not exceed 5000
+   - the elements of any of the arrays are integer numbers in the [1, 2^31 - 1]
+     range
+
+Efficiency constraints
+
+   - your function is expected to print the result in less than 2 seconds
+
+Example
+
+   Input                Output
+   ----------------     ------
+   v: 5, 4, 3, 2, 8     3
+"""
+
+
+def hill(v):
+    # Write your code here
+    # To print results to the standard output you can use print
+    # Example print "Hello world!”
+
+
+
+
+
+
+
+#!/usr/bin/env python3
+# coding: utf-8
+
+"""
+Challenge 4: Deviation
+
+Given an array of integer elements and an integer d please consider all the
+sequences of d consecutive elements in the array.  For each sequence we compute
+the difference between the maximum and the minimum value of the elements in
+that sequence and name it the deviation.
+
+Your task is to
+
+   - write a function that computes the maximum value among the deviations of
+     all the sequences considered above
+   - print the value the standard output (stdout)
+
+Note that your function will receive the following arguments:
+
+   - v, which is the array of integers
+   - d, which is an integer value giving the length of the sequences
+
+Data constraints
+
+   - the array will contain up to 100,000 elements
+   - all the elements in the array are integer numbers in the following range:
+     [1, 2^31 - 1]
+   - the value of d will not exceed the length of the given array
+
+Efficiency constraints
+
+   - your function is expected to print the result in less than 2 seconds
+
+Example Input
+
+   v: 6, 9, 4, 7, 4, 1
+   d: 3
+
+Example Output
+
+   6
+
+Explanation
+
+   The sequences of length 3 are:
+      - 6 9 4 having the median 5 (the minimum value in the sequence is 4 and
+        the maximum is 9)
+      - 9 4 7 having the median 5 (the minimum value in the sequence is 4 and
+        the maximum is 9)
+      - 7 4 1 having the median 6 (the minimum value in the sequence is 1 and
+        the maximum is 7)
+   The maximum value among all medians is 6
+"""
+
+
+def find_deviation(v, d):
+    # Write your code here
+    # To print results to the standard output you can use print
+    # Example print "Hello world!"
+    …
+
+
+
+
+
+
+
+#!/usr/bin/env python3
+# coding: utf-8
+
+"""
+Challenge 5: Maximum Difference
+
+Given an array of integer elements, a subsequence of this array is a set of
+consecutive elements from the array (i.e., given the array
+v: [7, 8, -3, 5, -1], a subsequence of v is 8, -3, 5)
+
+Your task is to
+
+   - write a function that finds a left and a right subsequence of the array
+     that satisfy the following conditions
+   - the two subsequences are unique (they don't have shared elements)
+   - the difference between the sum of the elements in the right subsequence
+     and the sum of the elements in the left subsequence is maximum
+   - print the difference to the standard output (stdout)
+
+Note that your function will receive the following arguments:
+
+   - v, which is the array of integers
+
+Data constraints
+
+   - the array has at least 2 and at most 1,000,000 numbers
+   - all the elements in the array are integer numbers in the following range:
+     [-1000, 1000]
+
+Efficiency constraints
+
+   - your function is expected to print the result in less than 2 seconds
+
+Example
+
+   Input                               Output
+   --------------------------------    ------
+   v: 3, -5, 1, -2, 8, -2, 3, -2, 1    15
+
+Explanation
+
+   - The left sequence is: -5, 1, -2 and the right sequence is: 8, -2, 3.
+"""
+
+
+def maxdiff(v):
+    # Write your code here
+    # To print results to the standard output you can use print
+    # Example print "Hello world!"
+    …
+
+
+
+challenge 4 是求一个数组中所有长度为 d 的 subarray 的最大值与最小值之差的最大值，我感觉有点像 range minimum query
+
+challenge 5 是求一个数组中两个 non-overlapping 的 subarray 的和的差最大值
+follow up: 循环数组怎么搞？
+
+
+x1： 圆上面的N个点，最多可以把圆分成多少块？
