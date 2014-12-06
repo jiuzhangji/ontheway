@@ -5,38 +5,59 @@ tickets that you used for travelling. Each ticket contains just the
 start location and the end location. Can you reconstruct your journey?
 
 5. 
-À¹½Øµ¼µ¯
+æ‹¦æˆªå¯¼å¼¹
 http://codevs.cn/problem/1044/
 
 6.
-ÆåÅÌÈ¾É« 2
+æ£‹ç›˜æŸ“è‰² 2
 http://codevs.cn/problem/1050/
 
 7.
-ÆïÊ¿ÓÎÀú
+éª‘å£«æ¸¸å†
 http://codevs.cn/problem/1219/
 
 8. 
-·½¸ñÓÎÏ·
+æ–¹æ ¼æ¸¸æˆ
 http://codevs.cn/problem/2853/
 
 
 9.
-·½¸ñÈ¡Êı
+æ–¹æ ¼å–æ•°
 http://codevs.cn/problem/1043/
 
 10.
-Ïß¶Î¸²¸Ç
+çº¿æ®µè¦†ç›–
 http://codevs.cn/problem/1214/
 
 11.
-³Ë»ı×î´ó
+ä¹˜ç§¯æœ€å¤§
 http://codevs.cn/problem/1017/
 
 12.
-³Ë·¨ÓÎÏ·
+ä¹˜æ³•æ¸¸æˆ
 http://codevs.cn/problem/1966/
 
 13.
-ËÄ¸ö¹úÍõ
+å››ä¸ªå›½ç‹
 http://codevs.cn/problem/1698/
+
+14.
+And Then There Was One
+çº¦ç‘Ÿå¤«é—®é¢˜å˜å½¢
+https://icpcarchive.ecs.baylor.edu/index.php?option=com_onlinejudge&Itemid=8&category=287&page=show_problem&problem=1883
+
+15.
+Game of Sum
+http://blog.csdn.net/abc123456789cbaabc/article/details/8680184
+
+16.
+Even Parity
+http://blog.sina.com.cn/s/blog_a0e9b50d0101bkpe.html
+
+17.
+Hackerâ€™s Crackdown
+http://www.350351.com/bianchengyuyan/Java/101027.html
+
+18.
+string painter
+http://www.cnblogs.com/hyxsolitude/p/3850819.html
