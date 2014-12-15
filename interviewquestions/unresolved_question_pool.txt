@@ -106,3 +106,28 @@ http://codevs.cn/problem/3269/
 加分二叉树
 http://codevs.cn/problem/1090/
 
+39.
+有若干个盒子，每个盒子有length和width，不考虑高度。只要尺寸fit，大盒子就可以
+放小盒子，但是一层只能套一个，即便还有空余；但可以多层嵌套。求最小的面积放所
+有的盒子
+
+40.
+Given an integer array, adjust each integers so that the difference of every adjcent integers are not greater than a given number target.
+
+If the array before adjustment is A, the array after adjustment is B, you should minimize the sum of |A[i]-B[i]| 
+
+注意
+You can assume each number in the array is a positive integer and not greater than 100
+
+样例
+Given [1,4,2,3] and target=1, one of the solutions is [2,3,2,3], the adjustment cost is 2 and it's minimal. Return 2.
+
+
+41.
+如何设计一个fb的privacy framework/system
+
+
+42.
+Given randomM(), a uniform random number generator in [1, M], implements another uniform random generator randomN(), in [1, n].
+
+
