@@ -130,4 +130,31 @@ Given [1,4,2,3] and target=1, one of the solutions is [2,3,2,3], the adjustment 
 42.
 Given randomM(), a uniform random number generator in [1, M], implements another uniform random generator randomN(), in [1, n].
 
+43.
+分布式LRU Cache
+
+44.
+KV Store 的持久化设计（存储格式，增删改查，序列化，索引，crush）
+
+45.
+ 一个敏感词的列表，大小千万级别，每个词从1个字符到一千个字符不等。每周更新一两个词。
+ 每个用户都可以上载文本文件，时时高并发，文件从一个字节到1M不懂。要求确认每个文件是否含有敏感词。
+ 
+46.
+怎么reverse 一个integer，6是110，reverse之后是011，输出3
+
+47.
+单链表的回文判断
+
+48.
+整数数组，找出连续和为0的最长一段。
+
+49.
+m台机器，n个任务，bool型矩阵A[][]，如果A[i][j]为真，i,j两个任务不能在一个机器上。要求：打印所有的任务分配。
+
+50.
+大数据里面找中位数，出现次数最多的，topK，内存受限
+
+
+
 
